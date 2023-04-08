@@ -1,8 +1,5 @@
-# name = workflow name
 name: Shell commands
 
-# on é o evento que queremos que seja triggerado para ativar nosso workflow
-# se quisermos mais um de evento -> on: [push, pull_request]
 on: push
 
 jobs:
@@ -15,3 +12,12 @@ jobs:
         run: |
           node -v
           npm -v
+  run-python:
+    runs-on: ubuntu-latest
+    needs: ['run-shell-command']
+    steps:
+      - name: python comnand
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python
