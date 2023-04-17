@@ -1,0 +1,14 @@
+name: Hello World
+author: Alexandre Corazza
+description: Some description
+inputs:
+  who-to-greet:
+    description: 'who to greet'
+    required: true
+    default: Alexandre
+outputs:
+  time:
+    description: 'The greeting time'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
